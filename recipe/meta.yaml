@@ -1,4 +1,4 @@
-{% set version = '0.42' %}
+{% set version = "0.43" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mpmi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mpmi/mpmi_{{ version }}.tar.gz
-  sha256: d0ea7b030c80ac830b886a32d635debac4a5a31092e5e9893a6bbd3bfed3fdc8
+  sha256: 403c46410101a249ff6a15e7d262c2e1d72476dd7ac56734af06f41fe981d096
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
