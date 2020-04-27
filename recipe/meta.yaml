@@ -1,4 +1,4 @@
-{% set version = '0.43' %}
+{% set version = "0.43.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mpmi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mpmi/mpmi_{{ version }}.tar.gz
-  sha256: 403c46410101a249ff6a15e7d262c2e1d72476dd7ac56734af06f41fe981d096
+  sha256: 1313c6b742546f9c276f3eba4aa4071eed69211932a7a61ad25094bf9148e7d3
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,17 +25,17 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('m2w64_fortran') }}        # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-kernsmooth
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-kernsmooth
 
 test:
@@ -46,13 +46,10 @@ test:
 about:
   home: http://r-forge.r-project.org/projects/mpmi/
   license: GPL-3
-  summary: 'Uses a kernel smoothing approach to calculate Mutual Information for comparisons
-    between all types of variables including continuous vs continuous, continuous vs
-    discrete and discrete vs discrete. Uses a nonparametric bias correction giving Bias
-    Corrected Mutual Information (BCMI). Implemented efficiently in Fortran 95 with
-    OpenMP and suited to large genomic datasets.  '
+  summary: 'Uses a kernel smoothing approach to calculate Mutual Information for comparisons between all types of variables including continuous vs continuous, continuous vs discrete and discrete vs discrete. Uses a nonparametric bias correction giving Bias Corrected Mutual Information (BCMI). Implemented efficiently in
+    Fortran 95 with OpenMP and suited to large genomic datasets.  '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
