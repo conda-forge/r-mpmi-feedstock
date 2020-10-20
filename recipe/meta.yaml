@@ -15,7 +15,6 @@ source:
 build:
   merge_build_host: true  # [win]
   number: 2
-  skip: true  # [r_base == "3.5.1"]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,7 +45,7 @@ test:
 
 about:
   home: http://r-forge.r-project.org/projects/mpmi/
-  license: GPL-3
+  license: GPL-3.0-only
   summary: 'Uses a kernel smoothing approach to calculate Mutual Information for comparisons between all types of variables including continuous vs continuous, continuous vs discrete and discrete vs discrete. Uses a nonparametric bias correction giving Bias Corrected Mutual Information (BCMI). Implemented efficiently in
     Fortran 95 with OpenMP and suited to large genomic datasets.  '
   license_family: GPL3
