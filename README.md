@@ -3,7 +3,7 @@ About r-mpmi
 
 Home: http://r-forge.r-project.org/projects/mpmi/
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mpmi-feedstock/blob/master/LICENSE.txt)
 
