@@ -14,6 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
+  skip: true  # [not win]
   number: 2
   rpaths:
     - lib/R/lib/
@@ -22,7 +23,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
-    - {{ compiler('fortran') }}
+    - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('m2w64_fortran') }}        # [win]
     - {{ posix }}filesystem        # [win]
@@ -31,7 +32,7 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
-    - r-base
+    - r-base 4.0.5 *_0
     - r-kernsmooth
   run:
     - r-base
