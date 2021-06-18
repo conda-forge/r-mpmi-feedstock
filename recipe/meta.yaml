@@ -11,6 +11,8 @@ source:
     - {{ cran_mirror }}/src/contrib/mpmi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mpmi/mpmi_{{ version }}.tar.gz
   sha256: 1313c6b742546f9c276f3eba4aa4071eed69211932a7a61ad25094bf9148e7d3
+  patches:  # [win]
+    - Makevars.patch  # [win]
 
 build:
   merge_build_host: true  # [win]
