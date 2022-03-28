@@ -1,4 +1,4 @@
-{% set version = "0.43.1" %}
+{% set version = "0.43.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,15 +10,15 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mpmi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mpmi/mpmi_{{ version }}.tar.gz
-  sha256: 1313c6b742546f9c276f3eba4aa4071eed69211932a7a61ad25094bf9148e7d3
-  patches:  # [win]
+  sha256: f41e7ad19a11db267044f657a24f0c3dc0ecd4c1302f51fb9986b4176dd6aea9
+  patches:   # [win]
     - Makevars.patch  # [win]
 
 build:
   merge_build_host: true  # [win]
   # Windows disabled during R 4.1 migration
-  skip: True  # [win]
-  number: 2
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
