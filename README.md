@@ -210,6 +210,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@Chris-Lowe-Integrity](https://github.com/Chris-Lowe-Integrity/)
 * [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
 
