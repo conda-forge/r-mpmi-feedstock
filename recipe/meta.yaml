@@ -14,13 +14,14 @@ source:
     - Makevars.patch  # [win]
 
 build:
-  # Windows disabled during R 4.1 migration
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
   number: 2
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -60,7 +61,6 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - Chris-Lowe-Integrity
 
 # Package: mpmi
 # Type: Package
