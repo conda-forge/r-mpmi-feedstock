@@ -17,7 +17,7 @@ build:
   # Windows disabled during R 4.1 migration
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
